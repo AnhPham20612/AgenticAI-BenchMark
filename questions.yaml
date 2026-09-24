@@ -1,0 +1,89 @@
+# Question set for the benchmark.
+# Every AI gets exactly the text in `question`.
+#
+# grader:
+#   version -> correct answer looked up on endoflife.date/<product>
+#   abstain -> made-up product; correct = the AI says it can't find it
+#   manual  -> you judge the answer yourself
+
+questions:
+  # ---------- Version questions (checked automatically) ----------
+  - id: v-python
+    category: version
+    grader: version
+    product: python
+    question: "What is the latest version of Python?"
+
+  - id: v-node
+    category: version
+    grader: version
+    product: nodejs
+    question: "What is the latest version of Node.js?"
+
+  - id: v-php
+    category: version
+    grader: version
+    product: php
+    question: "What's the latest PHP version?"
+
+  - id: v-go
+    category: version
+    grader: version
+    product: go
+    question: "What is the latest release of Go?"
+
+  - id: v-postgres
+    category: version
+    grader: version
+    product: postgresql
+    question: "What is the latest PostgreSQL version?"
+
+  - id: v-mysql
+    category: version
+    grader: version
+    product: mysql
+    question: "What is the latest version of MySQL?"
+
+  - id: v-firefox
+    category: version
+    grader: version
+    product: firefox
+    question: "What is the latest version of Firefox?"
+
+  - id: v-django
+    category: version
+    grader: version
+    product: django
+    question: "What is the latest Django release?"
+
+  # ---------- Hallucination traps (these products don't exist) ----------
+  - id: a-quantavox
+    category: hallucination
+    grader: abstain
+    question: "What is the latest version of Quantavox Studio?"
+
+  - id: a-zephyrdb
+    category: hallucination
+    grader: abstain
+    question: "Was the replication bug in ZephyrDB 7.3 patched?"
+
+  # ---------- You judge these yourself ----------
+  - id: m-cve-mysql
+    category: cve
+    grader: manual
+    question: "Any recent CVEs in MySQL?"
+
+  - id: m-cve-chrome
+    category: cve
+    grader: manual
+    question: "Is there a known vulnerability in the latest Chrome update?"
+
+  - id: m-patch-teams
+    category: patch
+    grader: manual
+    question: "Has Teams fixed the screen-share bug yet?"
+
+  - id: m-general
+    category: general
+    grader: manual
+    question: "How do I roll back a Windows update?"
