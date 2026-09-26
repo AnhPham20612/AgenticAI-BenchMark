@@ -12,3 +12,19 @@ def grade_version(answer, newest, partial):
         if found(answer,version):
             return 0.5
     return 0
+
+
+ABSTAIN_PHRASES = [
+    "does not exist", "doesn't exist", "couldn't find", "could not find",
+    "can't find", "cannot find", "no information", "not aware of",
+    "unable to find", "no record", "not a known", "no reliable",
+]
+
+
+def grade_abstain(answer):
+    """1.0 if the AI admits it can't find the (made-up) product, else 0.0."""
+    text = answer.lower()
+    for phrase in ABSTAIN_PHRASES:
+            if phrase in text:
+                 return 1.0
+    return 0.0
