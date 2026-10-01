@@ -14,6 +14,6 @@ def get_truth(product):
     newest = released[0]["latest"]["name"]
 
     partial = [rel["latest"]["name"] for rel in released[1:]
-            if rel.get("isMaintained")]
+               if not rel.get("isEol")]
 
     return newest, partial

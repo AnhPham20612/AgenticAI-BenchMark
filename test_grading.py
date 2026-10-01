@@ -8,16 +8,15 @@ print("partial:", partial)
 print()
 
 # ---------- 2. Version grader ----------
-# Uses the REAL Node.js versions fetched above, so the tests stay correct
-# even when a new Node.js version comes out.
-version_tests = [
-    (f"Use Node {newest}",       1.0),   # newest version       -> full credit
-    (f"The LTS is {partial[0]}", 0.5),   # older maintained line -> half credit
-    ("Node 18 is great",         0.0),   # old, unsupported     -> wrong
-    (f"Try Node {newest}1",      0.0),   # extra digit stuck on -> wrong
+version_tests = [                                  # ← replace this whole block
+    (f"Use Node {newest}",         1.0),
+    (f"The LTS is {partial[0]}",   0.5),
+    ("Node 18 is great",           0.0),
+    (f"Try Node {newest}1",        0.0),
+    ("Node 18.20.8 is the latest", 0.0),   # NEW
 ]
 
-for answer, expected_score in version_tests:
+for answer, expected_score in version_tests:      # ← this loop stays the same
     score = grade_version(answer, newest, partial)
     result = "PASS" if score == expected_score else "FAIL"
     print(result, score, "<--", answer)
